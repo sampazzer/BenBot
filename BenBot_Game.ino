@@ -119,7 +119,7 @@ void loop() {
   //Every 5 seconds it displays next game text.
   //Millis is used instead of delay as the button presses are being checked.
   if (!startGameText){
-    if (millis() - cycleTime >= 5000 || firstTextOn){
+    if (millis() - cycleTime >= 2500 || firstTextOn){
       display.clearDisplay();
       display.setTextSize(2);
       display.setTextColor(SSD1306_WHITE);
@@ -585,6 +585,7 @@ void loop() {
       if(reactionSecondCount <= 0){
         reactionGameLoop = false;
         startGameText = false;
+        setColour = false;
         digitalWrite(blueLEDpin, LOW);
         digitalWrite(greenLEDpin, LOW);
         digitalWrite(redLEDpin, LOW);
