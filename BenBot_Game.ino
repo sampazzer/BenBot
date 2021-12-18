@@ -119,7 +119,7 @@ void loop() {
   //Every 5 seconds it displays next game text.
   //Millis is used instead of delay as the button presses are being checked.
   if (!startGameText){
-    if (millis() - cycleTime >= 2500 || firstTextOn){
+    if (millis() - cycleTime >= 2000 || firstTextOn){
       display.clearDisplay();
       display.setTextSize(2);
       display.setTextColor(SSD1306_WHITE);
@@ -266,25 +266,25 @@ void loop() {
         if (randomSequenceGame || plus1Game && i == sequenceCount -1){
           if (sequenceColour == blueLEDnumber){
             digitalWrite(blueLEDpin, HIGH);
-            delay(1500);
+            delay(1000);
             digitalWrite(blueLEDpin, LOW);
             delay(1000);
           }
           else if(sequenceColour == greenLEDnumber){
             digitalWrite(greenLEDpin, HIGH);
-            delay(1500);
+            delay(1000);
             digitalWrite(greenLEDpin, LOW);
             delay(1000);
           }
           else if(sequenceColour == yellowLEDnumber){
             digitalWrite(yellowLEDpin, HIGH);
-            delay(1500);
+            delay(1000);
             digitalWrite(yellowLEDpin, LOW);
             delay(1000);
           }
           else if(sequenceColour == redLEDnumber){
             digitalWrite(redLEDpin, HIGH);
-            delay(1500);
+            delay(1000);
             digitalWrite(redLEDpin, LOW);
             delay(1000);
           }
@@ -357,7 +357,7 @@ void loop() {
             display.println(sequenceCount-guessCount);
             display.display();
           }
-          delay(1000);
+          delay(250);
           digitalWrite(blueLEDpin, LOW);
         }
       }
@@ -390,7 +390,7 @@ void loop() {
             display.println(sequenceCount-guessCount);
             display.display();
           }
-          delay(1000);
+          delay(250);
           digitalWrite(greenLEDpin, LOW);
         }
       }
@@ -427,7 +427,7 @@ void loop() {
             display.println(sequenceCount-guessCount);
             display.display();
           }
-          delay(1000);
+          delay(250);
           digitalWrite(yellowLEDpin, LOW);
         }
       }
@@ -464,7 +464,7 @@ void loop() {
             display.println(sequenceCount-guessCount);
             display.display();
           }
-          delay(1000);
+          delay(250);
           digitalWrite(redLEDpin, LOW);
         }
       }
